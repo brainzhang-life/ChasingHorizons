@@ -72,3 +72,30 @@
 1. 进入 `docs/` 目录，挑选您感兴趣的省份指南 Markdown 文件。
 2. 依据各线路的**自驾线路**和**路段距离表**合理规划日程，并参考配套的**可视化地图**做导航直观预判。
 3. 结合**特点**和景点打卡推荐，了解每个落脚点的最佳体验项目，确保安全并收获极致的自驾体验。
+
+---
+
+## 📄 PDF 电子书导出指南
+
+指南支持一键导出为精美的、带动态页码目录的 PDF 电子书，排版专门针对 A4 打印尺寸做了深度优化，确保图片不跨页、自动居中且大小适宜。
+
+### 1. 系统依赖安装
+本 PDF 编译脚本基于 **WeasyPrint** 打造，需要系统安装有 Pango 和 Cairo。
+在 macOS 上请执行：
+```bash
+brew install pango cairo
+```
+
+### 2. Python 依赖安装
+激活虚拟环境，并安装 Python 相关包：
+```bash
+source .venv/bin/activate
+pip install weasyprint markdown
+```
+
+### 3. 一键生成 PDF
+在项目根目录下运行转换脚本，即可在根目录下生成 `ChasingHorizons.pdf`：
+```bash
+source .venv/bin/activate && python3 scripts/convert_to_pdf.py
+```
+
