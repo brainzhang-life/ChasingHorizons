@@ -75,6 +75,10 @@
 
 ---
 
+## 📄 PDF 下载
+
+https://github.com/brainzhang-life/ChasingHorizons/releases
+
 ## 📄 PDF 电子书导出指南
 
 指南支持一键导出为精美的、带动态页码目录的 PDF 电子书，排版专门针对 A4 打印尺寸做了深度优化，确保图片不跨页、自动居中且大小适宜。
