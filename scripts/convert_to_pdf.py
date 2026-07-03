@@ -231,13 +231,25 @@ def main():
         font-weight: 600;
         border-bottom: 1px solid #e2e8f0;
         padding-bottom: 6px;
+        break-before: page; /* Start H2 on a new page */
         break-after: avoid;
+    }
+    h1 + h2 {
+        break-before: avoid; /* Prevent first H2 immediately following H1 from starting on a new page */
     }
     h3 {
         font-size: 13pt;
         color: #1e3a8a;
         margin-top: 25px;
         margin-bottom: 12px;
+        font-weight: 600;
+        break-after: avoid;
+    }
+    h4 {
+        font-size: 11.5pt;
+        color: #1e293b;
+        margin-top: 20px;
+        margin-bottom: 10px;
         font-weight: 600;
         break-after: avoid;
     }
@@ -336,11 +348,24 @@ def main():
     </div>
     """)
     
+    # Preface (SUMMARY.md content before "## 目录")
+    preface_path = os.path.join(docs_dir, "SUMMARY.md")
+    if os.path.exists(preface_path):
+        with open(preface_path, "r", encoding="utf-8") as f:
+            preface_content = f.read()
+        if "## 目录" in preface_content:
+            preface_content = preface_content.split("## 目录")[0]
+        preface_content = preprocess_markdown(preface_content)
+        preface_html = markdown.markdown(preface_content, extensions=['tables'])
+        html_parts.append(f'<div class="chapter preface" id="preface">{preface_html}</div>')
+        
     # Build Table of Contents HTML
     toc_html = []
     toc_html.append('<div class="toc-page">')
     toc_html.append('<h1>目录</h1>')
     toc_html.append('<ul class="toc">')
+    if os.path.exists(preface_path):
+        toc_html.append('<li><a href="#preface">卷首语：纵横神州，追光而行</a><span class="leader"></span><a class="page-ref" href="#preface"></a></li>')
     
     # Generate TOC items and load each chapter content
     chapters_html = []
