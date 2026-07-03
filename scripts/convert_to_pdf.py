@@ -83,44 +83,23 @@ def main():
     css_content = """
     @page {
         size: A4;
-        margin: 25mm 20mm 25mm 20mm;
+        margin: 20mm 20mm 20mm 20mm;
         @bottom-center {
             content: counter(page);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             font-size: 9pt;
             color: #94a3b8;
         }
-        @top-left {
-            content: "《追光而行：中国绝美自驾路线规划指南》";
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 8pt;
-            color: #94a3b8;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 5px;
-            width: 100%;
-        }
-        @top-right {
-            content: string(chapter-title);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 8pt;
-            color: #94a3b8;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 5px;
-        }
     }
     
     @page cover-page {
         margin: 0;
         background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-        @top-left { content: none; }
-        @top-right { content: none; }
         @bottom-center { content: none; }
     }
     
     @page toc-page {
-        margin: 25mm 20mm 25mm 20mm;
-        @top-left { content: none; }
-        @top-right { content: none; }
+        margin: 20mm 20mm 20mm 20mm;
         @bottom-center { content: none; }
     }
     
@@ -284,6 +263,14 @@ def main():
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         break-inside: avoid;
         page-break-inside: avoid;
+    }
+    
+    /* Make human geography maps (人文地图) match route maps in width, scaling height proportionally */
+    img[alt*="人文地图"] {
+        width: 95%;
+        max-width: 95%;
+        max-height: 160mm; /* Allow more height so square maps can span full page width */
+        height: auto;
     }
     
     /* Prevent images/tables in lists from breaking across pages */
