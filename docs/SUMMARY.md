@@ -2,13 +2,9 @@
 
 本自驾游指南专为国内自驾游爱好者和地理文化探索者打造。我们整合了国内31个省市的经典自驾与旅游路线，并为所有34个省级行政区配备了精美详细的人文与地市地图。助您读万卷书，行万里路，用轮迹丈量华夏大地。
 
-* 联系作者:
+* [联系作者](https://brainz.fun/about/)
 
-https://brainz.fun/about/
-
-* PDF 下载:
-
-https://github.com/brainzhang-life/ChasingHorizons/releases
+* [PDF 下载](https://github.com/brainzhang-life/ChasingHorizons/releases)
 
 ## 卷首语：纵横神州，追光而行
 
