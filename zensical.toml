@@ -1,0 +1,27 @@
+[project]
+site_name = "追光而行：中国绝美自驾路线规划指南"
+site_description = "专为自驾游爱好者打造的保姆级路线指南，覆盖中国全部 34 个省级行政区。"
+site_url = "https://travel.brainz.fun"
+site_dir = "site"
+
+[project.theme]
+language = "zh"
+features = [
+    "content.code.copy",
+    "content.code.select",
+    "navigation.footer",
+    "navigation.instant",
+    "search.highlight",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "deep orange"
+accent = "blue"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "deep orange"
+accent = "blue"
