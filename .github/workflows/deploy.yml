@@ -39,6 +39,12 @@ jobs:
       - name: Sync Homepage Content
         run: cp docs/SUMMARY.md docs/index.md
 
+      - name: Exclude Superpowers Directory
+        run: |
+          if [ -d "docs/superpowers" ]; then
+            mv docs/superpowers ./superpowers_tmp
+          fi
+
       - name: Build Site
         run: zensical build
 
